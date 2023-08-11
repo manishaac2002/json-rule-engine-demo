@@ -25,7 +25,6 @@ import {Engine} from 'json-rules-engine'
     
     //to run the engine
     const  {events} = await engine.run(facts)
-
     events.map(event=>console.log(event.params.data))
 
 }
