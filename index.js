@@ -11,14 +11,15 @@ const start = async () => {
                 fact: 'string',
                 operator: 'equal',
                 value:  'black'&&'orange'&&'no color'
-            }],
+            },
+        ],
         },
         event: {
             type: 'message',
             params: {
                 data: 'Warning'
             }
-        }
+        },
     })
 
 
@@ -38,22 +39,22 @@ const start = async () => {
             }
         }
     })
-    // engine.addRule({
-    //     // define the condition for when result should display
-    //     conditions: {
-    //         all: [{
-    //             fact: 'string',
-    //             operator: 'equal',
-    //             value:  'green'&&'blue'
-    //         }],
-    //     },
-    //     event: {
-    //         type: 'message',
-    //         params: {
-    //             data: 'status'
-    //         }
-    //     }
-    // })
+    engine.addRule({
+        // define the condition for when result should display
+        conditions: {
+            all: [{
+                fact: 'string',
+                operator: 'equal',
+                value:  'green'&&'black'
+            }],
+        },
+        event: {
+            type: 'message',
+            params: {
+                data: 'status'
+            }
+        }
+    })
 
 
     engine.addRule({
@@ -62,7 +63,7 @@ const start = async () => {
             all: [{
                 fact: 'string',
                 operator: 'notEqual',
-                value: 'green'&&'blue'
+                value: 'green'&&'black'
             }],
         },
         event: {
@@ -73,7 +74,7 @@ const start = async () => {
         }
     })
 
-    const facts = { string: 'bl' }
+    const facts = { string: 'black' }
 
     //to run the engine
     const { events } = await engine.run(facts)
